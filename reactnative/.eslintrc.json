@@ -1,0 +1,76 @@
+{
+    "extends": ["airbnb", "plugin:redux-saga/recommended"],
+    "parser": "babel-eslint",
+    "plugins": ["react", "jsx-a11y", "import", "redux-saga"],
+
+    "rules": {
+        "import/named": 2,
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ],
+        "max-len": [
+            1,
+            80,
+            2,
+            {
+                "ignoreComments": true
+            }
+        ],
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "semi": ["error", "never"],
+        "padded-blocks": [
+            "error",
+            {
+                "switches": "never"
+            }
+        ],
+        "no-bitwise": [
+            "error",
+            {
+                "allow": ["~"]
+            }
+        ],
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+        "no-console": "off",
+        "dot-notation": "off",
+        "no-extra-boolean-cast": 2,
+        "no-unused-expressions": "off",
+        "func-names": "off",
+        "eol-last": "off",
+        "react/prop-types": [
+            1,
+            {
+                "ignore": ["t"]
+            }
+        ],
+        "react/jsx-indent": [1, 4],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ]
+    },
+    "globals": {
+        "$": false,
+        "window": false
+    },
+    "env": {
+        "browser": true,
+        "es6": true
+    }
+}
