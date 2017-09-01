@@ -1,12 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import createMemoryHistory from 'history/createMemoryHistory'
+import configRouter from './routes'
 
 export default function () {
-    const history = createMemoryHistory()
     const combEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
     const initialState = {}
 
+    const { reducer, middleware, enhancer } = configRouter()
     const enhancers = combEnhancers(applyMiddleware())
 
-    return createStore(initialState, enhancers)
+    // return createStore(initialState, enhancers)
+    return {}
 }
