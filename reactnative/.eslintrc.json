@@ -51,6 +51,7 @@
         "no-unused-expressions": "off",
         "func-names": "off",
         "eol-last": "off",
+        "react/prefer-stateless-function": [0, {}],
         "react/prop-types": [
             1,
             {
