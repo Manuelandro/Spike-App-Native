@@ -3,23 +3,16 @@ import { View, Text, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 import { NavigationBar } from '@shoutem/ui'
 
+import { Wrapper } from './style'
+
 const App = props => (
-    <View style={styles.container}>
+    <Wrapper>
         <NavigationBar
             leftComponent={<Text>Menu</Text>}
             centerComponent={<Text>Today</Text>}
         />
         <Text>aaa</Text>
-    </View>
+    </Wrapper>
 )
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-})
 
 export default App
