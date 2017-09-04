@@ -8,6 +8,6 @@ const store = configureStore()
 
 export default () => (
     <Provider store={store}>
-        <App />
+        <App store={store} />
     </Provider>
 )

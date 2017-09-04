@@ -6,23 +6,7 @@
                 "transform-react-jsx-source",
                 "transform-es2015-destructuring",
                 "transform-object-rest-spread",
-                "transform-flow-strip-types",
-                [
-                    "module-resolver",
-                    {
-                        "root": ["./src"],
-                        "alias": {
-                            "Config": "/config",
-                            "Consts": "/constants",
-                            "Actions": "/store/actions",
-                            "Selectors": "/store/selectors",
-                            "Modules": "/modules",
-                            "Schemas": "/modules/schemas/",
-                            "Styled": "/modules/styled-components/",
-                            "Scenes": "/scenes"
-                        }
-                    }
-                ]
+                "transform-flow-strip-types"
             ]
         }
     }
