@@ -1,0 +1,1 @@
+export const USER_ARRIVED = 'USER_ARRIVED'

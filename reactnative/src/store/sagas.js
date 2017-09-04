@@ -1,6 +1,7 @@
 import createSagaMiddleware from 'redux-saga'
 import { fork } from 'redux-saga/effects'
 import { safeValues } from '../modules/utils'
+import { appSaga } from '../modules/redux/sagas'
 
 export default function configureSagas() {
     const startSagas = ({ ...sagas }) =>
@@ -16,6 +17,8 @@ export default function configureSagas() {
 
     return {
         sagaMiddleware: createSagaMiddleware(),
-        rootSaga: startSagas({}),
+        rootSaga: startSagas({
+            appSaga,
+        }),
     }
 }
