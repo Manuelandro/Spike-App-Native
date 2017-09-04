@@ -1,13 +1,15 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import configRouter from './routes'
+import configReducer from './reducers'
 
 export default function () {
     const combEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
     const initialState = {}
 
-    const { reducer, middleware, enhancer } = configRouter()
-    const enhancers = combEnhancers(applyMiddleware())
+    const { rooteReducer, routerMiddleware, routerEnhancer } = configReducer()
+    const enhancers = combEnhancers(
+        routerEnhancer,
+        applyMiddleware(routerMiddleware),
+    )
 
-    // return createStore(initialState, enhancers)
-    return {}
+    return createStore(rooteReducer, initialState, enhancers)
 }
