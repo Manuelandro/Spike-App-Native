@@ -5,6 +5,8 @@ export default function () {
     const history = createMemoryHistory()
     const routesMap = {
         HOME: '/',
+        CATALOG: 'catalog/',
+        CHECKOUT: 'checkout/',
     }
 
     const { reducer, middleware, enhancer } = connectRoutes(history, routesMap)

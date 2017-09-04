@@ -15,7 +15,10 @@ export default function () {
         applyMiddleware(routerMiddleware, sagaMiddleware),
     )
 
+    const store = createStore(rooteReducer, initialState, enhancers)
+
+    /* needs to be run after the store's created */
     sagaMiddleware.run(rootSaga)
 
-    return createStore(rooteReducer, initialState, enhancers)
+    return store
 }
