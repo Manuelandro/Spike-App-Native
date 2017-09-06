@@ -1,11 +1,10 @@
 import React from 'react'
-import { AsyncStorage, Text } from 'react-native'
+import { AsyncStorage } from 'react-native'
 import { persistStore } from 'redux-persist'
-import { Font } from 'expo'
-import { NavigationBar, Heading, Icon } from '@shoutem/ui'
-
+import { connect } from 'react-redux'
+import { Font, AppLoading } from 'expo'
+import { addNavigationHelpers } from 'react-navigation'
 import { catalogApi } from '../../modules/config'
-import { Wrapper } from './style'
 
 class App extends React.Component {
     state = {
@@ -31,25 +30,32 @@ class App extends React.Component {
             },
         })
             .then(() => this.setState({ catalogReady: true }))
-            .catch(() => console.error('fetch'))
+            .catch(() => {
+                /* TODO: notify user connection error */
+                this.setState({ catalogReady: true })
+            })
     }
 
     render() {
         if (!this.state.fontReady || !this.state.catalogReady) {
-            return <Text>loading</Text>
+            return <AppLoading />
         }
 
+        const Navigator = this.props.Navigator
+
         return (
-            <Wrapper>
-                <NavigationBar
-                    leftComponent={<Icon name="sidebar" />}
-                    centerComponent={<Text>Today</Text>}
-                />
-                <Heading>Heading</Heading>
-                <Text>aaa</Text>
-            </Wrapper>
+            <Navigator
+                navigation={addNavigationHelpers({
+                    dispatch: this.props.dispatch,
+                    state: this.props.location,
+                })}
+            />
         )
     }
 }
 
-export default App
+const mapState = state => ({
+    location: state.location,
+})
+
+export default connect(mapState)(App)

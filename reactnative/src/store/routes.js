@@ -1,15 +1,17 @@
-import { connectRoutes } from 'redux-first-router'
-import createMemoryHistory from 'history/createMemoryHistory'
+import { NavigationActions } from 'react-navigation'
 
-export default function () {
-    const history = createMemoryHistory()
-    const routesMap = {
-        HOME: '/',
-        CATALOG: 'catalog/',
-        CHECKOUT: 'checkout/',
+export default function configRouter(Navigator) {
+    try {
+        const initialState = Navigator.router.getStateForAction(
+            NavigationActions.init(),
+        )
+
+        return function reducer(state = initialState, action) {
+            const nextState = Navigator.router.getStateForAction(action, state)
+            return nextState || state
+        }
+    } catch (e) {
+        console.log(e)
+        return false
     }
-
-    const { reducer, middleware, enhancer } = connectRoutes(history, routesMap)
-
-    return { reducer, middleware, enhancer }
 }
