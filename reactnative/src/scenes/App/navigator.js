@@ -1,8 +1,10 @@
-import { StackNavigator, TabNavigator } from 'react-navigation'
+import React from 'react'
+import { Text } from 'react-native'
+import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import Home from '../Home'
 import Catalog from '../Catalog'
 
-export default TabNavigator({
+export const DrawerStack = DrawerNavigator({
     HOME: {
         screen: Home,
         navigationOptions: {
@@ -16,3 +18,35 @@ export default TabNavigator({
         },
     },
 })
+
+export const DrawerNav = StackNavigator(
+    {
+        DRAWERSTACK: {
+            screen: DrawerStack,
+        },
+    },
+    {
+        headerMode: 'float',
+        navigationOptions: ({ navigation }) => ({
+            headerStyle: { backgroundColor: 'rgb(255, 255, 255)' },
+            title: 'Today',
+            headerLeft: (
+                <Text onPress={() => navigation.navigate('DrawerOpen')}>
+                    Menu
+                </Text>
+            ),
+        }),
+    },
+)
+
+export default StackNavigator(
+    {
+        DRAWER: {
+            screen: DrawerNav,
+        },
+    },
+    {
+        headerMode: 'none',
+        initialRouteName: 'DRAWER',
+    },
+)
