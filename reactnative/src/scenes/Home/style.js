@@ -5,4 +5,5 @@ export const Wrapper = styled.View`
     background-color: #fff;
     align-items: center;
     justify-content: center;
+    font-family: 'Rubik-Regular';
 `

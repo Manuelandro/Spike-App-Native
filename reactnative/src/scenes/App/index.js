@@ -2,23 +2,17 @@ import React from 'react'
 import { AsyncStorage } from 'react-native'
 import { persistStore } from 'redux-persist'
 import { connect } from 'react-redux'
-import { Font, AppLoading } from 'expo'
 import { addNavigationHelpers } from 'react-navigation'
 import { catalogApi } from '../../modules/config'
 
 class App extends React.Component {
     state = {
-        fontReady: false,
+
         catalogReady: false,
     }
 
     async componentWillMount() {
-        await Font.loadAsync({
-            'Rubik-Regular': require('@shoutem/ui/fonts/Rubik-Regular.ttf'), // eslint-disable-line global-require
-            'rubicon-icon-font': require('@shoutem/ui/fonts/rubicon-icon-font.ttf'), // eslint-disable-line global-require
-        })
 
-        this.setState({ fontReady: true })
 
         await persistStore(this.props.store, { storage: AsyncStorage })
 
@@ -38,7 +32,7 @@ class App extends React.Component {
 
     render() {
         if (!this.state.fontReady || !this.state.catalogReady) {
-            return <AppLoading />
+            return null
         }
 
         const Navigator = this.props.Navigator
