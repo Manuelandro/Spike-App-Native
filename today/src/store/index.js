@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
+import { loggerMiddleware } from 'today-modules/redux/middlewares'
 import configReducer from './reducers'
-// import configureSagas from './sagas'
-import { loggerMiddleware } from '../modules/redux/middlewares'
+import configureSagas from './sagas'
 
 export default function (Navigator) {
     try {
@@ -11,13 +11,15 @@ export default function (Navigator) {
         /* eslint-enable */
 
         const rootReducer = configReducer(Navigator)
-        // const { sagaMiddleware, rootSaga } = configureSagas()
-        const enhancers = combEnhancers(applyMiddleware(loggerMiddleware))
-        // applyMiddleware(sagaMiddleware),
+        const { sagaMiddleware, rootSaga } = configureSagas()
+        const enhancers = combEnhancers(
+            applyMiddleware(loggerMiddleware, sagaMiddleware),
+        )
+
         const store = createStore(rootReducer, {}, enhancers)
 
         /* needs to be run after the store's created */
-        // sagaMiddleware.run(rootSaga)
+        sagaMiddleware.run(rootSaga)
 
         return store
     } catch (e) {
