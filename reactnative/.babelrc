@@ -1,13 +1,15 @@
 {
-    "presets": ["babel-preset-expo"],
-    "env": {
-        "development": {
-            "plugins": [
-                "transform-react-jsx-source",
-                "transform-es2015-destructuring",
-                "transform-object-rest-spread",
-                "transform-flow-strip-types"
-            ]
-        }
+  "presets": [
+    "babel-preset-react-native-stage-0/decorator-support"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source",
+        "transform-es2015-destructuring",
+        "transform-object-rest-spread",
+        "transform-flow-strip-types"
+      ]
     }
+  }
 }
