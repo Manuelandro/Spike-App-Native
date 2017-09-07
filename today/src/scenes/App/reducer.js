@@ -14,7 +14,7 @@ export const test = (state = initialState, { type, payload }) =>
     createState(state, {})
 
 export const HANDLERS = {
-    [Types.USER_ARRIVED]: test,
+    [Types.APP_OPENED]: test,
 }
 
 export default createReducer(initialState, HANDLERS)

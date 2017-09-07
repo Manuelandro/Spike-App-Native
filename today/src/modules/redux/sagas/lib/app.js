@@ -11,7 +11,7 @@ function* userArrivedTask() {
 
 export default function* saga() {
     try {
-        yield takeLatest(Types.USER_ARRIVED, userArrivedTask)
+        yield takeLatest(Types.APP_OPENED, userArrivedTask)
     } catch (e) {
         console.log(e)
     }
