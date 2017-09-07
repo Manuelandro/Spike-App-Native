@@ -7,13 +7,10 @@ import { catalogApi } from '../../modules/config'
 
 class App extends React.Component {
     state = {
-
         catalogReady: false,
     }
 
     async componentWillMount() {
-
-
         await persistStore(this.props.store, { storage: AsyncStorage })
 
         await fetch(catalogApi, {
@@ -31,7 +28,7 @@ class App extends React.Component {
     }
 
     render() {
-        if (!this.state.fontReady || !this.state.catalogReady) {
+        if (!this.state.catalogReady) {
             return null
         }
 
