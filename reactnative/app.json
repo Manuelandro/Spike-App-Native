@@ -1,19 +1,4 @@
 {
-  "expo": {
-    "sdkVersion": "20.0.0",
-    "hooks": {
-      "postPublish": [
-        {
-          "file": "sentry-expo/upload-sourcemaps",
-          "config": {
-            "organization": "Eataly Net",
-            "project": "today-app-native",
-            "authToken": "2f61f4029a874eecb7833299d3bbf040bf6e6389648a4514adc4fc675d0d0c2f"
-          }
-        }
-      ]
-    }
-  },
-  "name": "TodayApp",
-  "displayName": "Today App"
+    "name": "TodayApp",
+    "displayName": "Today App"
 }
