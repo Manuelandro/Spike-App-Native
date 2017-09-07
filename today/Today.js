@@ -1,9 +1,9 @@
-import React from "react"
-import { Provider } from "react-redux"
+import React from 'react'
+import { Provider } from 'react-redux'
 
-import Navigator from "./src/scenes/App/navigator"
-import configureStore from "./src/store"
-import App from "./src/scenes/App"
+import Navigator from './src/scenes/App/navigator'
+import configureStore from './src/store'
+import App from './src/scenes/App'
 
 export default function Today() {
     const store = configureStore(Navigator)
