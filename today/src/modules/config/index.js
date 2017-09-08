@@ -1,4 +1,4 @@
-export const baseUrl = 'http://dev.today2.com/'
+export const baseUrl = 'http://dev.today.com/'
 export const pageSize = 10
 
 /* API Endpoints */

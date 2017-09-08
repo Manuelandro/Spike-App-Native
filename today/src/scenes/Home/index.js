@@ -1,10 +1,10 @@
 import React from 'react'
-import { Heading } from '@shoutem/ui'
+import { Text } from 'react-native'
 import { Wrapper } from './style'
 
 const Home = props => (
     <Wrapper>
-        <Heading>Home</Heading>
+        <Text>Home</Text>
     </Wrapper>
 )
 

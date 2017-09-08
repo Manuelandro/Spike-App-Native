@@ -1,10 +1,10 @@
 import React from 'react'
-import { Heading } from '@shoutem/ui'
+import { Text } from 'react-native'
 import { Wrapper } from './style'
 
 const Catalog = props => (
     <Wrapper>
-        <Heading>Catalog</Heading>
+        <Text>Catalog</Text>
     </Wrapper>
 )
 

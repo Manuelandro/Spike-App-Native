@@ -1,6 +1,4 @@
-import { AppRegistry } from 'react-native'
-import Today from './Today'
-import configSentry from './sentry'
+import { AppRegistry } from "react-native"
+import Today from "./Today"
 
-configSentry()
-AppRegistry.registerComponent('today', () => Today)
+AppRegistry.registerComponent("today", () => Today)
