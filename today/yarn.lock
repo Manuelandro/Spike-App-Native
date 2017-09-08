@@ -4398,6 +4398,16 @@ react-native-side-menu@^1.0.2:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-smart-timer-enhance@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-smart-timer-enhance/-/react-native-smart-timer-enhance-1.0.3.tgz#47ddc19be5a6c19184449039495f25546bcd94fe"
+
+react-native-smart-toast@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-smart-toast/-/react-native-smart-toast-1.1.1.tgz#19fde8b8cc862bcd72e1143f79c42615f1fd1796"
+  dependencies:
+    react-native-smart-timer-enhance "^1.0.2"
+
 react-native-tab-navigator@^0.3.3:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/react-native-tab-navigator/-/react-native-tab-navigator-0.3.4.tgz#54a18f1ad06a09d4a0de81ff00416bc1b760c960"

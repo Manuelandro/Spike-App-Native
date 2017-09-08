@@ -1,6 +1,5 @@
 import React from 'react'
-import { Text } from 'react-native'
-import { Wrapper } from './style'
+import { Wrapper, Text } from './style'
 
 const Home = props => (
     <Wrapper>
