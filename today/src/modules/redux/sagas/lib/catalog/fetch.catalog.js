@@ -2,7 +2,7 @@ import { put, takeLatest } from 'redux-saga/effects'
 import { safeKeys } from 'today-modules/utils'
 import { ProdSchema } from 'today-modules/schemas'
 import pick from 'lodash/pick'
-import Types from '../../../types'
+import Types from 'types'
 
 /*
  * * * * * * * * * * * * * * * * * * * * * * * * * * *

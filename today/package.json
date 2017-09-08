@@ -23,6 +23,7 @@
         "redux-persist": "^4.9.1",
         "redux-saga": "^0.15.6",
         "reduxsauce": "^0.6.0",
+        "reselect": "^3.0.1",
         "styled-components": "^2.1.2"
     },
     "devDependencies": {

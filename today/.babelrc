@@ -8,7 +8,9 @@
                 "root": ["./src"],
                 "extensions": [".js", ".ios.js", ".android.js"],
                 "alias": {
-                    "today-modules": "./src/modules"
+                    "today-modules": "./src/modules",
+                    "selectors": "./src/modules/redux/selectors",
+                    "types": "./src/modules/redux/types"
                 }
             }
         ]
