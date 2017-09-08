@@ -10,7 +10,10 @@
                 "alias": {
                     "today-modules": "./src/modules",
                     "selectors": "./src/modules/redux/selectors",
-                    "types": "./src/modules/redux/types"
+                    "types": "./src/modules/redux/types",
+                    "App": "./src/scenes/App",
+                    "Home": "./src/scenes/Home",
+                    "Catalog": "./src/scenes/Catalog"
                 }
             }
         ]

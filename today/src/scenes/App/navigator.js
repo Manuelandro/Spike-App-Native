@@ -1,8 +1,8 @@
 import React from 'react'
 import { Text } from 'react-native'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
-import Home from '../Home'
-import Catalog from '../Catalog'
+import Home from 'Home'
+import Catalog from 'Catalog'
 
 export const DrawerStack = DrawerNavigator(
     {
