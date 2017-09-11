@@ -1,5 +1,5 @@
 import { takeLatest } from 'redux-saga/effects'
-import Types from '../../types'
+import Types from 'types'
 
 function* userArrivedTask() {
     try {

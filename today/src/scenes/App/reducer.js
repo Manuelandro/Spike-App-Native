@@ -1,6 +1,6 @@
 import { createReducer } from 'reduxsauce'
 import createState from 'redux-create-state'
-import Types from '../../modules/redux/types'
+import Types from 'types'
 import initialState from './initialState.json'
 
 // split reducer and match them later
@@ -10,11 +10,11 @@ import initialState from './initialState.json'
 // createState for immutability
 // https://github.com/niklasramo/redux-create-state#examples
 
-export const test = (state = initialState, { type, payload }) =>
+export const appOpenend = (state = initialState, { type, payload }) =>
     createState(state, {})
 
 export const HANDLERS = {
-    [Types.APP_OPENED]: test,
+    [Types.APP_OPENED]: appOpenend,
 }
 
 export default createReducer(initialState, HANDLERS)

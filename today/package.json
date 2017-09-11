@@ -5,9 +5,10 @@
     "scripts": {
         "start": "node node_modules/react-native/local-cli/cli.js start",
         "test": "jest",
-        "android": "react-native run-android",
-        "ios": "react-native run-ios",
-        "postinstall": "rndebugger-open"
+        "postinstall": "rndebugger-open",
+        "android:create-emulator":
+            "android create avd -n Today -k \"system-images;android-23;google_apis;x86_64\"",
+        "android:run-emulator": "emulator -avd Today"
     },
     "dependencies": {
         "lodash": "^4.17.4",
@@ -27,6 +28,7 @@
         "styled-components": "^2.1.2"
     },
     "devDependencies": {
+        "babel-eslint": "^7.2.3",
         "babel-jest": "21.0.0",
         "babel-plugin-module-resolver": "^3.0.0-beta.0",
         "babel-preset-react-native": "3.0.2",
@@ -49,8 +51,6 @@
         "preset": "react-native"
     },
     "rnpm": {
-        "assets": [
-            "./assets/fonts/"
-        ]
+        "assets": ["./assets/fonts/"]
     }
 }
