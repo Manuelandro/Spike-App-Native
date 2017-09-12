@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import appReducer from 'App/store/reducer'
-import configRouter from 'App/layout/routes'
+import appReducer from '../../app/state/reducer'
+import configRouter from '../../app/layout/routes'
 
 export default function configReducer(Navigator) {
     return combineReducers({

@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import { loggerMiddleware } from 'today-modules/redux/middlewares'
+import { loggerMiddleware } from '../middlewares'
 import configReducer from '../reducers'
 import configureSagas from '../sagas'
 

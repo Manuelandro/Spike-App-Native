@@ -1,8 +1,8 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import App from 'App/layout'
-import Navigator from 'App/layout/navigator'
-import configureStore from './src/store'
+import App from './src/app/layout'
+import Navigator from './src/app/layout/navigator'
+import configureStore from './src/redux/store'
 
 export default function Today() {
     const store = configureStore(Navigator)
