@@ -10,7 +10,7 @@ class AlertProvider extends React.Component {
         alert: PropTypes.func,
     }
 
-    // WTF?
+    // set the context of component child
     getChildContext() {
         return {
             alert: (...args) => this.dropdown.alert(...args),
@@ -35,6 +35,7 @@ class AlertProvider extends React.Component {
 export const connectAlert = (WrappedComponent) => {
     class ConnectedAlert extends Component {
         render() {
+            // retrieve the context set
             const { props, context } = this
             return (
                 <WrappedComponent

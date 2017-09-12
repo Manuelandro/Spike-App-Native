@@ -1,10 +1,19 @@
 import { combineReducers } from 'redux'
-import appReducer from '../../app/state/reducer'
-import configRouter from '../../app/layout/routes'
+import { HomeNavigator } from 'Home/navigation'
+import { CatalogNavigator } from 'Catalog/navigation'
 
-export default function configReducer(Navigator) {
+import appReducer from '../../app/state/reducer'
+import { tabBarReducer } from '../../app/layout/navigation/tabBar'
+import { drawerReducer } from '../../app/layout/navigation/drawer'
+
+export default function configReducer() {
     return combineReducers({
-        location: configRouter(Navigator),
         app: appReducer,
+        tabBar: tabBarReducer,
+        drawer: drawerReducer,
+        tabHome: (state, action) =>
+            HomeNavigator.router.getStateForAction(action, state),
+        tabCatalog: (state, action) =>
+            CatalogNavigator.router.getStateForAction(action, state),
     })
 }
