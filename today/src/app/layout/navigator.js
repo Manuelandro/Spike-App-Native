@@ -67,6 +67,15 @@ export default StackNavigator(
     },
 ) */
 
+export const Stack = StackNavigator({
+    HOME: {
+        screen: Home,
+    },
+    CATALOG: {
+        screen: Catalog,
+    },
+})
+
 export default DrawerNavigator(
     {
         HOME: {

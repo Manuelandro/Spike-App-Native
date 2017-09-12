@@ -1,9 +1,10 @@
 import React from 'react'
-import { AsyncStorage } from 'react-native'
+import { AsyncStorage, StatusBar } from 'react-native'
 import { persistStore } from 'redux-persist'
 import { connect } from 'react-redux'
 import { addNavigationHelpers } from 'react-navigation'
-import { catalogApi } from '../../modules/config'
+import { catalogApi } from 'today-modules/config'
+import AlertProvider from './alert.provider'
 
 class App extends React.Component {
     state = {
@@ -35,12 +36,15 @@ class App extends React.Component {
         const Navigator = this.props.Navigator
 
         return (
-            <Navigator
-                navigation={addNavigationHelpers({
-                    dispatch: this.props.dispatch,
-                    state: this.props.location,
-                })}
-            />
+            <AlertProvider>
+                <StatusBar />
+                <Navigator
+                    navigation={addNavigationHelpers({
+                        dispatch: this.props.dispatch,
+                        state: this.props.location,
+                    })}
+                />
+            </AlertProvider>
         )
     }
 }

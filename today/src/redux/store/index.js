@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { loggerMiddleware } from 'today-modules/redux/middlewares'
-import configReducer from './reducers'
-import configureSagas from './sagas'
+import configReducer from '../reducers'
+import configureSagas from '../sagas'
 
 export default function (Navigator) {
     try {

@@ -6,14 +6,16 @@
         "start": "node node_modules/react-native/local-cli/cli.js start",
         "test": "jest",
         "postinstall": "rndebugger-open",
-        "android:create-emulator":
-            "android create avd -n Today -k \"system-images;android-23;google_apis;x86_64\"",
+        "android:create-emulator": "android create avd -n Today -k \"system-images;android-23;google_apis;x86_64\"",
         "android:run-emulator": "emulator -avd Today"
     },
     "dependencies": {
+        "hoist-non-react-statics": "^2.3.1",
         "lodash": "^4.17.4",
+        "prop-types": "^15.5.10",
         "react": "16.0.0-alpha.12",
         "react-native": "0.48.2",
+        "react-native-dropdownalert": "^2.11.0",
         "react-native-elements": "^0.16.0",
         "react-native-i18n": "^2.0.5",
         "react-native-smart-toast": "^1.1.1",
@@ -51,6 +53,8 @@
         "preset": "react-native"
     },
     "rnpm": {
-        "assets": ["./assets/fonts/"]
+        "assets": [
+            "./assets/fonts/"
+        ]
     }
 }

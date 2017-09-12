@@ -1,4 +1,4 @@
-import { AppRegistry } from "react-native"
-import Today from "./Today"
+import { AppRegistry } from 'react-native'
+import Today from './Today'
 
-AppRegistry.registerComponent("today", () => Today)
+AppRegistry.registerComponent('today', () => Today)
