@@ -1,12 +1,12 @@
 import React from 'react'
-import { AsyncStorage, StatusBar } from 'react-native'
+import { AsyncStorage } from 'react-native'
 import { persistStore } from 'redux-persist'
 import { connect } from 'react-redux'
-// import { addNavigationHelpers } from 'react-navigation'
 import { catalogApi } from 'today-modules/config'
-// import { Drawer } from './navigator'
-import AlertProvider from './alert.provider'
+import DropdownAlert from 'react-native-dropdownalert'
+// import DrawerNavigation from './navigation/drawer'
 import TabBarNavigation from './navigation/tabBar'
+import { Container } from './style'
 
 class App extends React.Component {
     state = {
@@ -24,21 +24,24 @@ class App extends React.Component {
             },
         })
             .then(() => this.setState({ catalogReady: true }))
-            .catch(() => {
+            .catch((e) => {
                 /* TODO: notify user connection error */
+                this.dropdown.alertWithType('error', 'Error', `${e}`)
                 this.setState({ catalogReady: true })
             })
     }
 
     render() {
-        if (!this.state.catalogReady) {
-            return null
-        }
-
         return (
-            <AlertProvider>
-                <TabBarNavigation />
-            </AlertProvider>
+            <Container>
+                {this.state.catalogReady && <TabBarNavigation />}
+                <DropdownAlert
+                    ref={(ref) => {
+                        this.dropdown = ref
+                    }}
+                    onClose={() => {}}
+                />
+            </Container>
         )
     }
 }
