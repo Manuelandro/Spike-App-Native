@@ -26,7 +26,7 @@ class App extends React.Component {
             .then(() => this.setState({ catalogReady: true }))
             .catch((e) => {
                 /* TODO: notify user connection error */
-                this.dropdown.alertWithType('error', 'Error', `${e}`)
+                this.dropdown.alertWithType('info', 'Error', `${e}`)
                 this.setState({ catalogReady: true })
             })
     }
