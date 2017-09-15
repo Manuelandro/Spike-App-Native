@@ -4,8 +4,6 @@ import { persistStore } from 'redux-persist'
 import { connect } from 'react-redux'
 import { catalogApi } from 'today-modules/config'
 import DropdownAlert from 'react-native-dropdownalert'
-// import DrawerNavigation from './navigation/drawer'
-import TabBarNavigation from './navigation/tabBar'
 import { Container } from './style'
 
 class App extends React.Component {
@@ -34,7 +32,7 @@ class App extends React.Component {
     render() {
         return (
             <Container>
-                {this.state.catalogReady && <TabBarNavigation />}
+                {this.state.catalogReady ? this.props.children : null}
                 <DropdownAlert
                     ref={(ref) => {
                         this.dropdown = ref
