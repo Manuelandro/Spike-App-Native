@@ -1165,6 +1165,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.eatalynet.today;
 				PRODUCT_NAME = today;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1184,6 +1185,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.eatalynet.today;
 				PRODUCT_NAME = today;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
