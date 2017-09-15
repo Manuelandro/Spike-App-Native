@@ -1,31 +1,46 @@
-import React from 'react'
-import { withState, withHandlers, compose } from 'recompose'
+import React, { Component } from 'react'
 import Modal from 'react-native-modal'
 import { Wrapper, Text } from './style'
 
-const Home = props => (
-    <Wrapper>
-        <Text>Home</Text>
-        <Text onPress={() => props.toggleHandler()}>Modal</Text>
-        <Modal
-            isVisible={props.visible}
-            animationInTiming={1}
-            animationOutTiming={1}
-            onBackButtonPress={() => props.toggleHandler()}
-            onBackdropPress={() => props.toggleHandler()}
-        >
+class Home extends Component {
+    static navigationOptions = {
+        title: 'Home',
+        headerTitle: 'Home',
+        headerLeft: () => <Text>menu</Text>,
+        gesturesEnabled: true,
+    }
+
+    constructor(props) {
+        super(props)
+        this.toggleHandler = this.toggleHandler.bind(this)
+        this.state = {
+            modal: false,
+        }
+    }
+
+    toggleHandler() {
+        this.setState({ modal: !this.state.modal })
+    }
+
+    render() {
+        return (
             <Wrapper>
-                <Text>Modal!</Text>
+                <Text>Home</Text>
+                <Text onPress={this.toggleHandler}>Modal</Text>
+                <Modal
+                    isVisible={this.state.modal}
+                    animationInTiming={1}
+                    animationOutTiming={1}
+                    onBackButtonPress={() => this.toggleHandler()}
+                    onBackdropPress={() => this.toggleHandler()}
+                >
+                    <Wrapper>
+                        <Text>Modal!</Text>
+                    </Wrapper>
+                </Modal>
             </Wrapper>
-        </Modal>
-    </Wrapper>
-)
+        )
+    }
+}
 
-const HighOrderComponent = compose(
-    withState('visible', 'toggle', false),
-    withHandlers({
-        toggleHandler: ({ toggle }) => () => toggle(n => !n),
-    }),
-)
-
-export default HighOrderComponent(Home)
+export default Home
